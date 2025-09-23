@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính Sách Bảo Mật - Chemify</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c5aa0;
+            text-align: center;
+            border-bottom: 3px solid #2c5aa0;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c5aa0;
+            margin-top: 30px;
+        }
+        .app-info {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .contact {
+            background: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        ul {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CHÍNH SÁCH BẢO MẬT</h1>
+        
+        <div class="app-info">
+            <strong>Ứng dụng:</strong> Chemify - Trợ Lý Học Hóa Thông Minh<br>
+            <strong>Phiên bản:</strong> 1.0<br>
+            <strong>Ngày cập nhật:</strong> 23/09/2025<br>
+            <strong>Nhà phát triển:</strong> Lê Văn Tấn Phát
+        </div>
+
+        <div class="highlight">
+            <strong>Tóm tắt:</strong> Chemify cam kết bảo vệ quyền riêng tư của người dùng. Ứng dụng được thiết kế để hoạt động với mức thu thập dữ liệu tối thiểu và bảo mật cao nhất.
+        </div>
+
+        <h2>1. THÔNG TIN CHÚNG TÔI THU THẬP</h2>
+        
+        <h3>1.1 Thông tin tự động thu thập</h3>
+        <ul>
+            <li><strong>Thông tin thiết bị:</strong> Loại thiết bị, hệ điều hành, phiên bản ứng dụng</li>
+            <li><strong>Thông tin sử dụng:</strong> Tần suất sử dụng tính năng, thời gian sử dụng ứng dụng</li>
+            <li><strong>Dữ liệu lỗi:</strong> Báo cáo lỗi tự động để cải thiện ứng dụng</li>
+        </ul>
+
+        <h3>1.2 Thông tin bạn cung cấp</h3>
+        <ul>
+            <li><strong>Hình ảnh scan:</strong> Ảnh bài tập hóa học bạn chụp để giải (chỉ xử lý tạm thời)</li>
+            <li><strong>Phản hồi:</strong> Đánh giá và góp ý bạn gửi về ứng dụng</li>
+        </ul>
+
+        <h2>2. CÁCH CHÚNG TÔI SỬ DỤNG THÔNG TIN</h2>
+        <ul>
+            <li><strong>Cung cấp dịch vụ:</strong> Xử lý hình ảnh để đưa ra lời giải bài tập</li>
+            <li><strong>Cải thiện ứng dụng:</strong> Phân tích cách sử dụng để nâng cao trải nghiệm</li>
+            <li><strong>Hỗ trợ kỹ thuật:</strong> Khắc phục lỗi và cung cấp hỗ trợ người dùng</li>
+            <li><strong>Phát triển tính năng:</strong> Tạo ra các tính năng mới phù hợp với nhu cầu</li>
+        </ul>
+
+        <h2>3. BẢO MẬT THÔNG TIN</h2>
+        
+        <div class="highlight">
+            <strong>Cam kết:</strong> Hình ảnh bạn scan sẽ được xử lý cục bộ trên thiết bị hoặc xóa ngay sau khi xử lý. Chúng tôi KHÔNG lưu trữ nội dung bài tập của bạn.
+        </div>
+
+        <ul>
+            <li><strong>Mã hóa dữ liệu:</strong> Tất cả dữ liệu được truyền tải qua kết nối bảo mật SSL</li>
+            <li><strong>Lưu trữ tối thiểu:</strong> Chỉ lưu trữ thông tin cần thiết cho hoạt động ứng dụng</li>
+            <li><strong>Truy cập hạn chế:</strong> Chỉ nhân viên có thẩm quyền mới được truy cập dữ liệu</li>
+            <li><strong>Xóa tự động:</strong> Dữ liệu tạm thời được xóa định kỳ</li>
+        </ul>
+
+        <h2>4. CHIA SẺ THÔNG TIN</h2>
+        <p><strong>Chúng tôi KHÔNG bán, cho thuê hoặc chia sẻ thông tin cá nhân của bạn với bên thứ ba</strong>, trừ các trường hợp sau:</p>
+        <ul>
+            <li>Khi có yêu cầu pháp lý từ cơ quan có thẩm quyền</li>
+            <li>Để bảo vệ quyền lợi và an toàn của người dùng khác</li>
+            <li>Với các nhà cung cấp dịch vụ kỹ thuật (đã ký cam kết bảo mật)</li>
+        </ul>
+
+        <h2>5. QUYỀN CỦA NGƯỜI DÙNG</h2>
+        <p>Bạn có quyền:</p>
+        <ul>
+            <li><strong>Truy cập:</strong> Yêu cầu biết thông tin chúng tôi có về bạn</li>
+            <li><strong>Chỉnh sửa:</strong> Cập nhật thông tin không chính xác</li>
+            <li><strong>Xóa:</strong> Yêu cầu xóa thông tin cá nhân</li>
+            <li><strong>Từ chối:</strong> Không đồng ý với việc xử lý dữ liệu nhất định</li>
+            <li><strong>Di chuyển:</strong> Yêu cầu xuất dữ liệu của bạn</li>
+        </ul>
+
+        <h2>6. QUYỀN TRUY CẬP THIẾT BỊ</h2>
+        <p>Ứng dụng yêu cầu các quyền sau:</p>
+        <ul>
+            <li><strong>Camera:</strong> Để chụp ảnh bài tập cần giải</li>
+            <li><strong>Bộ nhớ:</strong> Để lưu trữ dữ liệu bảng tuần hoàn và cache</li>
+            <li><strong>Internet:</strong> Để cập nhật nội dung và xử lý AI (khi cần)</li>
+        </ul>
+
+        <h2>7. COOKIES VÀ CÔNG NGHỆ TƯƠNG TỰ</h2>
+        <p>Chúng tôi sử dụng:</p>
+        <ul>
+            <li><strong>Cookies cần thiết:</strong> Để ứng dụng hoạt động bình thường</li>
+            <li><strong>Analytics:</strong> Để hiểu cách người dùng tương tác với ứng dụng</li>
+            <li><strong>Cache:</strong> Để cải thiện tốc độ tải và trải nghiệm offline</li>
+        </ul>
+
+        <h2>8. BẢO VỆ TRẺ EM</h2>
+        <p>Chemify phù hợp cho người dùng từ 13 tuổi trở lên. Chúng tôi cam kết:</p>
+        <ul>
+            <li>Không cố ý thu thập thông tin từ trẻ em dưới 13 tuổi</li>
+            <li>Nếu phát hiện, sẽ xóa ngay lập tức thông tin này</li>
+            <li>Khuyến khích phụ huynh giám sát việc sử dụng ứng dụng của trẻ</li>
+        </ul>
+
+        <h2>9. CẬP NHẬT CHÍNH SÁCH</h2>
+        <ul>
+            <li>Chính sách này có thể được cập nhật để phản ánh thay đổi trong ứng dụng</li>
+            <li>Thay đổi quan trọng sẽ được thông báo qua ứng dụng</li>
+            <li>Việc tiếp tục sử dụng sau khi cập nhật có nghĩa bạn đồng ý với chính sách mới</li>
+        </ul>
+
+        <h2>10. LUẬT PHÁP ÁP DỤNG</h2>
+        <p>Chính sách này tuân thủ:</p>
+        <ul>
+            <li>Luật An ninh mạng của Việt Nam (2018)</li>
+            <li>Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân</li>
+            <li>Các quy định của Apple App Store và Google Play Store</li>
+        </ul>
+
+        <div class="contact">
+            <h2>LIÊN HỆ</h2>
+            <p>Nếu bạn có câu hỏi về chính sách bảo mật này, vui lòng liên hệ:</p>
+            <ul>
+                <li><strong>Email:</strong> levantanphat8898@gmail.com</li>
+                <li><strong>Địa chỉ:</strong> 111 Đường 9, Phước Long, Tp Hồ Chí Minh</li>
+                <li><strong>Điện thoại:</strong> 0988719735</li>
+            </ul>
+            <p><strong>Thời gian phản hồi:</strong> Trong vòng 72 giờ làm việc</p>
+        </div>
+
+        <hr style="margin: 30px 0;">
+        <p style="text-align: center; color: #666; font-size: 14px;">
+            © 2024 Lê Văn Tấn Phát. Bản quyền được bảo lưu.<br>
+            Chính sách này có hiệu lực từ ngày 23/09/2025.
+        </p>
+    </div>
+</body>
+</html>
