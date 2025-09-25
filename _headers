@@ -1,0 +1,4 @@
+/*
+  Access-Control-Allow-Origin: https://mozilla.github.io
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Access-Control-Allow-Headers: Range, Content-Type
