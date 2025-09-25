@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lê Văn Tấn Phát - Mobile Developer CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .cv-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .title {
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+        }
+
+        .contact-icon {
+            width: 18px;
+            height: 18px;
+            opacity: 0.8;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+
+        .sidebar {
+            background: linear-gradient(180deg, #34495e 0%, #2c3e50 100%);
+            color: white;
+            padding: 40px 30px;
+        }
+
+        .content {
+            padding: 40px;
+            background: white;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            color: #2c3e50;
+        }
+
+        .sidebar .section-title {
+            color: white;
+            border-bottom-color: #3498db;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            border-radius: 3px;
+            animation: fillSkill 1.5s ease-out;
+        }
+
+        @keyframes fillSkill {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: var(--level);
+            }
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-weight: 500;
+            color: #3498db;
+            font-size: 1.05em;
+        }
+
+        .duration {
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .project {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .project-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .project-role {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .responsibility-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .responsibility-list li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .responsibility-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .tech-stack {
+            margin-top: 15px;
+            padding: 12px;
+            background: #ecf0f1;
+            border-radius: 6px;
+        }
+
+        .tech-label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .tech-items {
+            font-size: 0.9em;
+            color: #34495e;
+            line-height: 1.4;
+        }
+
+        .contact-full {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-full li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+        }
+
+        .education-item {
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .education-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .education-details {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .career-goal {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #2ecc71;
+            font-style: italic;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .floating-tech {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 0.8em;
+            color: white;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .print-hide {
+            display: block;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .print-hide {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="floating-tech" style="top: 20px; left: 50px; animation-delay: 0s;">React Native</div>
+            <div class="floating-tech" style="top: 60px; right: 80px; animation-delay: 2s;">TypeScript</div>
+            <div class="floating-tech" style="bottom: 30px; left: 100px; animation-delay: 4s;">Redux</div>
+
+            <div class="header-content">
+                <h1 class="name">LÊ VĂN TẤN PHÁT</h1>
+                <p class="title">Senior Mobile Developer | Fintech Specialist</p>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                        </svg>
+                        0988 719 735
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                        </svg>
+                        levantanphat9c@gmail.com
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        TP. Thủ Đức, TP.HCM
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Contact Details -->
+                <div class="section">
+                    <h3 class="section-title">Liên Hệ</h3>
+                    <ul class="contact-full">
+                        <li>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                            </svg>
+                            0988 719 735
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                            </svg>
+                            levantanphat9c@gmail.com
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" />
+                            </svg>
+                            111 Đường 9, Phước Bình<br>Thủ Đức, TP.HCM
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
+                            </svg>
+                            26 tuổi
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Core Skills -->
+                <div class="section">
+                    <h3 class="section-title">Core Technologies</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">React Native</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">TypeScript</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">React</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 88%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Redux Toolkit</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 82%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Socket.io</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specializations -->
+                <div class="section">
+                    <h3 class="section-title">Chuyên Môn</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <strong>Fintech Development</strong><br>
+                            <small>Chứng khoán, Ngân hàng</small>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <strong>Real-time Trading</strong><br>
+                            <small>Socket.io, WebSocket</small>
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <strong>Performance Optimization</strong><br>
+                            <small>Code Splitting, Caching</small>
+                        </li>
+                        <li style="padding: 8px 0;">
+                            <strong>Team Leadership</strong><br>
+                            <small>4+ members</small>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Languages -->
+                <div class="section">
+                    <h3 class="section-title">Ngôn Ngữ</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">Tiếng Việt</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Tiếng Anh</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="--level: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="content">
+                <!-- Career Goals -->
+                <div class="section">
+                    <h2 class="section-title">Mục Tiêu Nghề Nghiệp</h2>
+                    <div class="career-goal">
+                        Với <span class="highlight">4 năm kinh nghiệm</span> phát triển ứng dụng di động cho các lĩnh
+                        vực bán hàng, khách hàng, mạng xã hội và đặc biệt là <span class="highlight">hệ thống giao dịch
+                            tài chính</span>, tôi mong muốn sử dụng kiến thức chuyên môn và kinh nghiệm làm việc để thực
+                        hiện hiệu quả các nhiệm vụ được giao. Tôi đang trên hành trình trở thành <span
+                            class="highlight">Senior Mobile Developer</span> để nâng cao kiến thức trong lĩnh vực IT và
+                        ứng dụng kiến thức, kỹ năng của mình để tạo ra giá trị cho công ty.
+                    </div>
+                </div>
+
+                <!-- Professional Experience -->
+                <div class="section">
+                    <h2 class="section-title">Kinh Nghiệm Làm Việc</h2>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Senior Mobile Developer</div>
+                                <div class="company">Difisoft Viet Nam JSC</div>
+                            </div>
+                            <div class="duration">02/2023 - Hiện tại</div>
+                        </div>
+
+                        <div class="project">
+                            <div class="project-title">📈 BSC Mobile Web Application</div>
+                            <div class="project-role">Full-stack Developer | 03/2025 - Hiện tại</div>
+                            <ul class="responsibility-list">
+                                <li>Phát triển ứng dụng giao dịch tài chính web với dữ liệu thị trường chứng khoán
+                                    real-time và các tính năng giao dịch phục vụ 10K+ người dùng</li>
+                                <li>Xây dựng 100+ component UI/UX responsive theo mobile-first approach với kiến trúc
+                                    tái sử dụng</li>
+                                <li>Triển khai state management phức tạp cho luồng giao dịch, xác thực và đồng bộ dữ
+                                    liệu real-time</li>
+                                <li>Tối ưu hiệu năng ứng dụng đạt được giảm 40% thời gian loading thông qua code
+                                    splitting và caching</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <div class="tech-label">Tech Stack:</div>
+                                <div class="tech-items">React 19, TypeScript 5.8, Vite 6, TailwindCSS 4, shadcn/ui,
+                                    Redux Toolkit, Socket.io, React Hook Form, Zod</div>
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <div class="project-title">🏦 San Xin Ha (Shinhan Securities)</div>
+                            <div class="project-role">Team Leader (4 thành viên) | 05/2024 - 03/2025</div>
+                            <ul class="responsibility-list">
+                                <li>Tham gia meeting thu thập yêu cầu từ khách hàng, phân tích và phân chia công việc
+                                </li>
+                                <li>Phát triển ứng dụng mobile với React Native cho hệ thống chứng khoán</li>
+                                <li>Tối ưu hóa hiệu năng xử lý dữ liệu và hỗ trợ sửa lỗi</li>
+                                <li>Giám sát tiến độ, đưa ra điều chỉnh khi cần thiết và review code</li>
+                                <li>Quản lý công việc sử dụng hệ thống Jira</li>
+                            </ul>
+                            <div class="tech-stack">
+                                <div class="tech-label">Tech Stack:</div>
+                                <div class="tech-items">React Native, Redux Toolkit, Axios, NFC Module, eKYC Module,
+                                    Socket.IO, Reanimated</div>
+                            </div>
+                        </div>
+
+                        <div class="project">
+                            <div class="project-title">📱 NHSV Pro & Paave Applications</div>
+                            <div class="project-role">Mobile Developer | 02/2023 - 04/2024</div>
+                            <ul class="responsibility-list">
+                                <li>Phát triển tính năng mới cho ứng dụng NHSV Pro (06/2023 - 04/2024)</li>
+                                <li>Phát triển và bảo trì ứng dụng Paave (02-11/2023)</li>
+                                <li>Hỗ trợ sửa lỗi và cải thiện hiệu năng ứng dụng</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Mobile Developer</div>
+                                <div class="company">Uto Tech</div>
+                            </div>
+                            <div class="duration">05/2022 - 12/2022</div>
+                        </div>
+                        <div class="project">
+                            <div class="project-title">🌍 Travel Social Network Platform</div>
+                            <ul class="responsibility-list">
+                                <li>Xây dựng mạng xã hội du lịch với React Native</li>
+                                <li>Phát triển tính năng mới và sửa lỗi</li>
+                                <li>Review code và báo cáo công việc hàng ngày qua Jira</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <div>
+                                <div class="job-title">Mobile Developer</div>
+                                <div class="company">Eco Giong</div>
+                            </div>
+                            <div class="duration">04/2021 - 04/2022</div>
+                        </div>
+                        <div class="project">
+                            <div class="project-title">💳 BAGang Loyalty App & POS System</div>
+                            <ul class="responsibility-list">
+                                <li>Tích hợp thanh toán trực tuyến (Momo, Payoo, etc.)</li>
+                                <li>Tích hợp Google Maps APIs (chỉ đường, đo khoảng cách, định vị)</li>
+                                <li>Responsive design cho nhiều thiết bị</li>
+                                <li>Xây dựng ứng dụng POS bán hàng</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Achievements -->
+                <!-- <div class="section">
+                    <h2 class="section-title">Thành Tựu Nổi Bật</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                        <div style="background: linear-gradient(135deg, #3498db, #2ecc71); color: white; padding: 20px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 2em; font-weight: bold; margin-bottom: 5px;">10K+</div>
+                            <div style="font-size: 0.9em;">Người dùng BSC Mobile</div>
+                        </div>
+                        <div
+                            style="background: linear-gradient(135deg, #e74c3c, #f39c12); color: white; padding: 20px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 2em; font-weight: bold; margin-bottom: 5px;">40%</div>
+                            <div style="font-size: 0.9em;">Giảm thời gian tải</div>
+                        </div>
+                        <div
+                            style="background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; padding: 20px; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 2em; font-weight: bold; margin-bottom: 5px;">100+</div>
+                            <div style="font-size: 0.9em;">Reusable Components</div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Personal Projects -->
+                <div class="section">
+                    <h2 class="section-title">Dự Án Cá Nhân</h2>
+                    <div class="project">
+                        <div class="project-title">🛠️ React Native Template Project</div>
+                        <ul class="responsibility-list">
+                            <li>Tạo code base template project cho React Native development</li>
+                            <li>Tích hợp Storybook để phát triển và test components</li>
+                            <li>Xây dựng Expo template với best practices</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <div class="tech-label">GitHub:</div>
+                            <div class="tech-items">
+                                <a href="https://github.com/levantanphat9c/react-native-template-storybook"
+                                    style="color: #3498db;">Template Storybook</a> |
+                                <a href="https://github.com/levantanphat9c/StorybookExpo" style="color: #3498db;">Expo
+                                    Template</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">Học Vấn & Chứng Chỉ</h2>
+                    <div
+                        style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #2ecc71;">
+                        <div style="font-weight: 600; color: #2c3e50; margin-bottom: 5px;">Mobile Development Expertise
+                        </div>
+                        <div style="color: #7f8c8d; font-size: 0.9em;">4+ years hands-on experience | Self-taught &
+                            Industry Training</div>
+                        <div style="margin-top: 10px; font-size: 0.9em; color: #34495e;">
+                            Chuyên sâu về React Native, TypeScript, và Fintech Development
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="background: #2c3e50; color: white; padding: 20px; text-align: center;">
+            <div style="font-size: 0.9em; opacity: 0.8;">
+                📱 Mobile Developer | 💼 Fintech Specialist | 🚀 Performance Optimization Expert
+            </div>
+            <div style="margin-top: 10px; font-size: 0.85em; opacity: 0.6;">
+                "Building exceptional mobile experiences for financial technology"
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth animations
+        document.addEventListener('DOMContentLoaded', function () {
+            const skillBars = document.querySelectorAll('.skill-level');
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.width = entry.target.style.getPropertyValue('--level');
+                    }
+                });
+            }, observerOptions);
+
+            skillBars.forEach(bar => {
+                bar.style.width = '0';
+                observer.observe(bar);
+            });
+
+            // Add hover effects for experience items
+            const experienceItems = document.querySelectorAll('.experience-item');
+            experienceItems.forEach(item => {
+                item.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateX(8px)';
+                    this.style.boxShadow = '0 8px 25px rgba(52, 152, 219, 0.2)';
+                });
+
+                item.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateX(0)';
+                    this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
